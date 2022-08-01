@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState} from "react";
+import itemData from "../data/items";
 
 function Item({ name, category }) {
+let [classCard, setClassCard]=useState(false)
+
+function handleAddItem(){
+  setClassCard((classCard) => !classCard)
+}
+
+  
   return (
-    <li className="">
+    <li className={classCard? "in-cart":""}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button className="add">Add to Cart</button>
+      <button onClick={handleAddItem} className="add">{classCard?  "Remove from Card":"Add to Cart" }</button>
     </li>
   );
 }
