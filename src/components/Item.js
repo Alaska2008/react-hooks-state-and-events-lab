@@ -8,12 +8,12 @@ function handleAddItem(){
   setClassCard((classCard) => !classCard)
 }
 
-  
+   let clssCard = classCard? "in-cart" : "";
   return (
-    <li className={classCard? "in-cart":""}>
+    <li className={clssCard}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button onClick={handleAddItem} className="add">{classCard?  "Remove from Card":"Add to Cart" }</button>
+      <button onClick={handleAddItem} className="add">{classCard?  "Remove From Cart":"Add to Cart" }</button>
     </li>
   );
 }
